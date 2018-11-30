@@ -541,4 +541,83 @@ __STATIC_INLINE __ASM void __FPU_Enable(void)
         BX      LR
 }
 
+
+/* ###################  Compiler specific Intrinsics  ########################### */
+/** \defgroup CMSIS_SIMD_intrinsics CMSIS SIMD Intrinsics
+  Access to dedicated SIMD instructions
+  @{
+*/
+
+#define __SADD8                           __sadd8
+#define __QADD8                           __qadd8
+#define __SHADD8                          __shadd8
+#define __UADD8                           __uadd8
+#define __UQADD8                          __uqadd8
+#define __UHADD8                          __uhadd8
+#define __SSUB8                           __ssub8
+#define __QSUB8                           __qsub8
+#define __SHSUB8                          __shsub8
+#define __USUB8                           __usub8
+#define __UQSUB8                          __uqsub8
+#define __UHSUB8                          __uhsub8
+#define __SADD16                          __sadd16
+#define __QADD16                          __qadd16
+#define __SHADD16                         __shadd16
+#define __UADD16                          __uadd16
+#define __UQADD16                         __uqadd16
+#define __UHADD16                         __uhadd16
+#define __SSUB16                          __ssub16
+#define __QSUB16                          __qsub16
+#define __SHSUB16                         __shsub16
+#define __USUB16                          __usub16
+#define __UQSUB16                         __uqsub16
+#define __UHSUB16                         __uhsub16
+#define __SASX                            __sasx
+#define __QASX                            __qasx
+#define __SHASX                           __shasx
+#define __UASX                            __uasx
+#define __UQASX                           __uqasx
+#define __UHASX                           __uhasx
+#define __SSAX                            __ssax
+#define __QSAX                            __qsax
+#define __SHSAX                           __shsax
+#define __USAX                            __usax
+#define __UQSAX                           __uqsax
+#define __UHSAX                           __uhsax
+#define __USAD8                           __usad8
+#define __USADA8                          __usada8
+#define __SSAT16                          __ssat16
+#define __USAT16                          __usat16
+#define __UXTB16                          __uxtb16
+#define __UXTAB16                         __uxtab16
+#define __SXTB16                          __sxtb16
+#define __SXTAB16                         __sxtab16
+#define __SMUAD                           __smuad
+#define __SMUADX                          __smuadx
+#define __SMLAD                           __smlad
+#define __SMLADX                          __smladx
+#define __SMLALD                          __smlald
+#define __SMLALDX                         __smlaldx
+#define __SMUSD                           __smusd
+#define __SMUSDX                          __smusdx
+#define __SMLSD                           __smlsd
+#define __SMLSDX                          __smlsdx
+#define __SMLSLD                          __smlsld
+#define __SMLSLDX                         __smlsldx
+#define __SEL                             __sel
+#define __QADD                            __qadd
+#define __QSUB                            __qsub
+
+#define __PKHBT(ARG1,ARG2,ARG3)          ( ((((uint32_t)(ARG1))          ) & 0x0000FFFFUL) |  \
+                                           ((((uint32_t)(ARG2)) << (ARG3)) & 0xFFFF0000UL)  )
+
+#define __PKHTB(ARG1,ARG2,ARG3)          ( ((((uint32_t)(ARG1))          ) & 0xFFFF0000UL) |  \
+                                           ((((uint32_t)(ARG2)) >> (ARG3)) & 0x0000FFFFUL)  )
+
+#define __SMMLA(ARG1,ARG2,ARG3)          ( (int32_t)((((int64_t)(ARG1) * (ARG2)) + \
+                                                      ((int64_t)(ARG3) << 32U)     ) >> 32U))
+
+/*@} end of group CMSIS_SIMD_intrinsics */
+
+
 #endif /* __CMSIS_ARMCC_H */

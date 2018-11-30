@@ -337,8 +337,11 @@
   #if (defined (__DSP_PRESENT) && (__DSP_PRESENT == 1))
     #define ARM_MATH_DSP
   #endif
+#elif defined (ARM_MATH_CA9)
+  #include "core_ca.h"
+  #define ARM_MATH_DSP
 #else
-  #error "Define according the used Cortex core ARM_MATH_CM7, ARM_MATH_CM4, ARM_MATH_CM3, ARM_MATH_CM0PLUS, ARM_MATH_CM0, ARM_MATH_ARMV8MBL, ARM_MATH_ARMV8MML"
+  #error "Define according the used Cortex core ARM_MATH_CM7, ARM_MATH_CM4, ARM_MATH_CM3, ARM_MATH_CM0PLUS, ARM_MATH_CM0, ARM_MATH_ARMV8MBL, ARM_MATH_ARMV8MML, ARM_MATH_CA9"
 #endif
 
 #undef  __CMSIS_GENERIC         /* enable NVIC and Systick functions */
